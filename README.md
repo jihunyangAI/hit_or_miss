@@ -1,20 +1,52 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 두근두근 복불복 룰렛
 
-# Run and deploy your AI Studio app
+참가자 이름을 입력하고 룰렛을 돌려 한 명을 랜덤으로 뽑는 깔끔하고 귀여운 복불복 게임입니다.
 
-This contains everything you need to run your app locally.
+## 🌐 배포 주소
 
-View your app in AI Studio: https://ai.studio/apps/53cdadce-f9ce-4c96-8610-f363c51b1ba9
+**https://jihunyangai.github.io/hit_or_miss/**
 
-## Run Locally
+`main` 브랜치에 푸시하면 GitHub Actions가 자동으로 빌드해 GitHub Pages에 배포합니다.
 
-**Prerequisites:**  Node.js
+## ✨ 주요 기능
 
+- **두 가지 모드**: 🍀 행운의 주인공을 뽑는 *행운 모드*와 😈 벌칙 당번을 뽑는 *벌칙 모드*를 고를 수 있습니다.
+- **참가자 관리**: 이름을 직접 추가하거나 지울 수 있고, 친구·회사·점심 메뉴 같은 프리셋으로 한 번에 채울 수도 있습니다.
+- **벌칙 관리**: 벌칙 목록을 직접 만들고, 벌칙 기능을 켜고 끌 수 있습니다.
+- **당첨 연출**: 당첨자가 나오면 꽃가루 효과와 효과음이 나옵니다. 효과음은 끌 수 있습니다.
+- **제외하고 다음 판**: 당첨자를 목록에서 빼고 바로 다음 라운드를 진행할 수 있습니다.
+- **기록과 통계**: 회차별 당첨 기록과 사람별 누적 통계를 보여주고, 통계를 텍스트로 복사할 수 있습니다.
+- **자동 저장**: 참가자, 벌칙, 기록이 브라우저(localStorage)에 저장되어 새로고침해도 남아 있습니다.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🛠 기술 스택
+
+- React 19 + TypeScript
+- Vite
+- Tailwind CSS 4
+- Motion (애니메이션), canvas-confetti (꽃가루 효과), lucide-react (아이콘)
+
+## 🚀 로컬에서 실행하기
+
+**필요한 것:** Node.js 또는 [Bun](https://bun.sh)
+
+```bash
+# 의존성 설치
+bun install
+# 또는 npm install --legacy-peer-deps
+
+# 개발 서버 실행 (http://localhost:3000)
+bun run dev
+
+# 프로덕션 빌드 (dist/ 폴더에 생성)
+bun run build
+```
+
+## 📁 폴더 구조
+
+```
+src/
+├── App.tsx           # 게임 상태 관리와 전체 화면 구성
+├── components/       # 룰렛, 참가자·벌칙 관리, 당첨 모달, 기록·통계, 상단 바
+├── types/            # 타입 정의
+└── utils/            # 색상·프리셋·기본 벌칙, 효과음
+```
