@@ -1,0 +1,6 @@
+{
+  "name": "두근두근 복불복 룰렛",
+  "description": "참가자 이름을 입력하고 룰렛을 돌려 한 명을 랜덤으로 뽑는 깔끔하고 귀여운 복불복 게임",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
